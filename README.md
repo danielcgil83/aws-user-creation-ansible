@@ -13,3 +13,6 @@
 
 
 - Por fim executa a criação dos usuários baseando-se neste novo arquivo CSV.
+
+
+- O arquivo CSV é apenas um modelo de como deve ser sua estrutura.
