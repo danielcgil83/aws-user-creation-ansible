@@ -1,0 +1,43 @@
+---
+
+# Importação de usuários para AWS
+
+- name: Importa usuarios
+  
+  hosts: localhost
+  connection: local
+
+  tasks:
+
+
+    # Executa localmente o script python para criação de arquivos com senhas
+    # fortes e aleatórias
+
+    - name: gera csv com senhas
+      script: aws_iam.py
+      args:
+        executable: python3
+
+
+    # Leitura do arquivo csv criado anteriormente
+
+    - name: ler arquivo csv
+      community.general.read_csv:
+        path: usuarios_com_senha.csv
+        key: usuarios
+      register: usuarios
+
+
+    # Criação de usuários na AWS baseado no novo arquivo csv
+    
+    - name: cria usuario na AWS
+      community.aws.iam:
+        iam_type: user
+        name: "{{ item.value.usuarios }}"
+        state: present
+        password: "{{ item.value.senha }}"
+        groups: "{{ item.value.grupo }}"
+        access_key_state: create
+      loop: "{{ usuarios.dict|dict2items }}"
+
+...
