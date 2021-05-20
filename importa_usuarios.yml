@@ -8,6 +8,27 @@
   connection: local
 
   tasks:
+  
+
+    # Leitura do arquivo csv de grupos
+
+    - name: ler arquivo csv de grupos
+      community.general.read_csv:
+        path: grupos_politicas.csv
+        key: grupo
+      register: grupo
+    
+
+    # Cria grupos e adiciona as politicas especificas
+
+    - name: cria grupos e adiciona politicas
+      community.aws.iam_group:
+        name: "{{ item.value.grupo }}"
+        managed_policies: 
+          - "{{ item.value.politica }}"
+          - "{{ item.value.enforce }}"
+        state: present
+      loop: "{{ grupo.dict|dict2items }}"
 
 
     # Executa localmente o script python para criação de arquivos com senhas
@@ -21,7 +42,7 @@
 
     # Leitura do arquivo csv criado anteriormente
 
-    - name: ler arquivo csv
+    - name: ler arquivo csv de usuarios
       community.general.read_csv:
         path: usuarios_com_senha.csv
         key: usuarios
