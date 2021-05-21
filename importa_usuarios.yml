@@ -6,6 +6,8 @@
   
   hosts: localhost
   connection: local
+  vars_files: id.yml
+
 
   tasks:
   
@@ -26,7 +28,7 @@
         name: "{{ item.value.grupo }}"
         managed_policies: 
           - "{{ item.value.politica }}"
-          - "{{ item.value.enforce }}"
+          - "{{nome_enforce}}"
         state: present
       loop: "{{ grupo.dict|dict2items }}"
 

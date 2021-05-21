@@ -11,7 +11,10 @@
 - Playbook associado a um script Python.
 
 
-- Com base em um arquivo CSV (exemplo com nome de grupos_politicas.csv), cria grupos, e adiciona políticas específicas a cada um deles.
+- Lê um arquivo criptografado id.yml onde está armazenada a ARN de uma política customizada que pode expor a ID da conta da AWS.
+
+
+- Com base em um arquivo CSV (exemplo com nome de grupos_politicas.csv) e no arquivo criptografado id.yml, cria grupos, e adiciona políticas específicas a cada um deles.
 
 
 - Em seguida lê outro arquivo CSV (exemplo com nome de usuarios2.csv) com nomes de funcionários e seus respectivos grupos.
@@ -21,6 +24,3 @@
 
 
 - Por fim executa a criação dos usuários baseando-se neste novo arquivo CSV.
-
-
-- OBS: no arquivo qrupos_politicas.csv é necessário trocar em todas as linhas "IDdaContaAWS" pelo número do ID da conta que será usada.

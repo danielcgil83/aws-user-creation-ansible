@@ -1,6 +1,6 @@
-grupo,politica,enforce
-DBA,arn:aws:iam::aws:policy/AmazonRDSFullAccess,arn:aws:iam::IDdaContaAWS:policy/EnforceMFAPolicy
-RedesAdmin,arn:aws:iam::aws:policy/AmazonVPCFullAccess,arn:aws:iam::IDdaContaAWS:policy/EnforceMFAPolicy
-CloudAdmin2,arn:aws:iam::aws:policy/AdministratorAccess,arn:aws:iam::IDdaContaAWS:policy/EnforceMFAPolicy
-LinuxAdmin,arn:aws:iam::aws:policy/AmazonEC2FullAccess,arn:aws:iam::IDdaContaAWS:policy/EnforceMFAPolicy
-Estagiarios,arn:aws:iam::aws:policy/ReadOnlyAccess,arn:aws:iam::IDdaContaAWS:policy/EnforceMFAPolicy
+grupo,politica
+DBA,arn:aws:iam::aws:policy/AmazonRDSFullAccess
+RedesAdmin,arn:aws:iam::aws:policy/AmazonVPCFullAccess
+CloudAdmin2,arn:aws:iam::aws:policy/AdministratorAccess
+LinuxAdmin,arn:aws:iam::aws:policy/AmazonEC2FullAccess
+Estagiarios,arn:aws:iam::aws:policy/ReadOnlyAccess
