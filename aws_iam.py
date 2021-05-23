@@ -16,6 +16,10 @@ Este arquivo executa 3 tarefas:
             - 1 caracter especial;
             - 4 números
 3 - Criação de novo arquivo csv com usuários e grupos do arquivo original e senha gerada aqui.
+
+by Daniel Gil
+https://github.com/danielcgil83
+Maio de 2021
 """
 
 import csv
